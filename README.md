@@ -38,8 +38,10 @@ In your terminal. <br>
         `python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl`
 2. Go to `app` directory: `cd app`
 3. Run your web app: `python run.py`
+4. The script will give you a link can be opened with your web browser
 
 ## Results <a name="results"></a>
-
+![](images/Distributions.png)
+![](images/Results.png)
 
 ## Licensing, Authors, Acknowledgements <a name="licensing"></a>
