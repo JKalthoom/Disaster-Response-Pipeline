@@ -24,9 +24,9 @@ The whole project is provided above as Python scripts, it should work properly i
   
 ## File Descriptions <a name="files"></a>
 There are three main components in this project. <br>
-- The ETL Pipeline (process_data.py), this script will load the messages and the categories datasets, merge them, clean the data, and finally store it in a SQLite database.
-- The ML Pipeline (train_classifier.py), this script will load data from the SQLite database, split the dataset into training and test sets, build a text processing and machine learning pipeline, train and tune a model using GridSearchCV, output results on the test set, exports the final model as a pickle file.
-- The Flask Web App (run.py), this script should run the project together and provide you with a web app to interact and visualize some important information about the dataset. <br>
+- The ETL Pipeline (data/process_data.py), this script will load the messages and the categories datasets, merge them, clean the data, and finally store it in a SQLite database.
+- The ML Pipeline (models/train_classifier.py), this script will load data from the SQLite database, split the dataset into training and test sets, build a text processing and machine learning pipeline, train and tune a model using GridSearchCV, output results on the test set, exports the final model as a pickle file.
+- The Flask Web App (app/run.py), this script should run the project together and provide you with a web app to interact and visualize some important information about the dataset. <br>
 Finally, all the files are well commented so it should be easy to understand. 
 
 ## How to Interact <a name="interaction"></a>
