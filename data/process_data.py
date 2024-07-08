@@ -44,7 +44,7 @@ def clean_data(df):
     # Convert category values to 0 or 1
     for column in categories_split:
         categories_split[column] = categories_split[column].str[-1].astype(int)
-    
+
     # Drop the original categories column from df
     df = df.drop('categories', axis=1)
 
@@ -53,6 +53,20 @@ def clean_data(df):
 
     # Check for duplicates in the final dataframe and drop them
     df = df.drop_duplicates()
+
+    # Identify columns that should be binary
+    binary_columns = []
+    for column in df.columns:
+        if df[column].dropna().isin([0, 1, 2]).all():
+            binary_columns.append(column)
+    
+    # Delete rows where binary columns are not binary
+    for column in binary_columns:
+        df = df[df[column].isin([0, 1])]
+
+    # Assert statements for sanity checks
+    assert len(df[df.duplicated()]) == 0, "There are duplicate observations in the data"
+    assert df['related'].isin([0, 1]).all(), "The 'related' column contains values other than 0 and 1"
 
     return df
 
